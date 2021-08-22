@@ -7241,10 +7241,10 @@ gatsby-plugin-fixhash@^0.0.4:
   resolved "https://registry.yarnpkg.com/gatsby-plugin-fixhash/-/gatsby-plugin-fixhash-0.0.4.tgz#fb1d6d67bb28d3a36abea6f4e6be8d9e54cbcec3"
   integrity sha512-cDzXj8gKSL3fQoP+5Jx5ozHKQl3lcvaCc9I5/t6ips2Kinn4jLmLFURAdFKMY/VPVrs7uqsMd/x7tf1C4azodQ==
 
-gatsby-plugin-google-marketing-platform@^0.1.21:
-  version "0.1.22"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-marketing-platform/-/gatsby-plugin-google-marketing-platform-0.1.22.tgz#661e9b15a8e3c35c85a85887e9c23e24e61d80a7"
-  integrity sha512-Odp9Xhbz5o0B9wwVeSEGSSoAJ//J9VrxD1Pe5EIlU8JHVLCyHVV2zWpcRuEu80sIuhwz8JsfioIf60cTBFg9jA==
+gatsby-plugin-google-marketing-platform@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-marketing-platform/-/gatsby-plugin-google-marketing-platform-0.2.0.tgz#9550ba4ca37f7d0762b9ce126c8b33b7ae727355"
+  integrity sha512-Hs/Ubu0F/JkCZjB1TZojWSGWWuB6RUw0DYoE2aSLZ/MckLnIlvQDytOXwUZ0JdDcBsQUAZtnfo9BgAIQG8sHtg==
   dependencies:
     common-tags "^1.8.0"
 
