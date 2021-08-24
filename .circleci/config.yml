@@ -1,0 +1,58 @@
+version: 2.1
+
+jobs:
+  sonarcloud:
+    docker:
+      - image: 'cimg/python:3.9.6'
+    steps:
+      - checkout
+      - sonarcloud/scan
+  semgrep-scan:
+    parameters:
+      repo_path:
+        type: string
+        default: myorg/semgrep-test-repo
+      default_branch:
+        type: string
+        default: main
+    environment:
+      SEMGREP_RULES: >- # more at semgrep.dev/explore
+        p/ci
+        p/nodejs
+        p/secrets
+    docker:
+      - image: returntocorp/semgrep-agent:v1
+    steps:
+      - checkout
+      - run:
+          name: "Semgrep scan"
+          command: semgrep-agent
+  snyk-scan:
+    docker:
+      - image: 'cimg/go:1.16'
+    steps:
+      - checkout
+      - snyk/scan
+  trufflehog-scan:
+    docker:
+      - image: 'cimg/python:3.9.6'
+    steps:
+      - checkout
+      - run: pip3 install trufflehog
+      - run: trufflehog --regex --entropy=False .      
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.1
+  snyk: snyk/snyk@1.0.2
+workflows:
+  main:
+    jobs:
+      - sonarcloud:
+          context: SonarCloud
+      - semgrep-scan
+      - snyk-scan:
+          context: SnykToken
+      - trufflehog-scan
+      # Supported file extensions for IaC are tf, yml, yaml & json    
+      # - snyk/scan-iac:
+      #     context: SnykToken
+
