@@ -29,9 +29,10 @@ jobs:
           command: semgrep-agent
   snyk-scan:
     docker:
-      - image: 'cimg/go:1.16'
+      - image: 'cimg/node:lts'
     steps:
       - checkout
+      - run: yarn build
       - snyk/scan
   trufflehog-scan:
     docker:
