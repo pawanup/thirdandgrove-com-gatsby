@@ -32,6 +32,7 @@ jobs:
       - image: 'cimg/node:lts'
     steps:
       - checkout
+      - run: yarn
       - run: yarn build
       - snyk/scan
   trufflehog-scan:
