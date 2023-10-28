@@ -5,7 +5,7 @@
   "author": "Third and Grove <https://www.thirdandgrove.com>",
   "main": "submission-created.js",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^1.6.0",
     "dotenv": "^8.2.0"
   },
   "repository": {
